@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Build your car!</title>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <!-- custom css -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container-fluid">
+    <div class="row app-container">
+
+      <div class="col-md-4 options-container">
+        <!-- build a car navigation -->
+        <ul class="nav nav-tabs nav-justified navigation">
+          <li role="presentation" class="active"><a class="text-warning" href="#">1. Vehicle</a></li>
+          <li role="presentation"><a class="text-warning" href="#">2. Color</a></li>
+          <li role="presentation"><a class="text-warning" href="#">3. Packages</a></li>
+          <li role="presentation"><a class="text-warning" href="#">4. Summary</a></li>
+        </ul>
+
+        <!-- color options -->
+        <div class="row">
+          <div class="col-md-6">
+            <div class="panel">
+              <div class="panel-body color-option black"></div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="panel">
+              <div class="panel-body color-option white"></div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="panel">
+              <div class="panel-body color-option metallic"></div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="panel">
+              <div class="panel-body color-option ruby"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- vehicle options -->
+        <div class="row">
+          <div class="col-md-6 vehicle-option avalon"></div>
+          <div class="col-md-6 vehicle-option camry"></div>
+          <div class="col-md-6 vehicle-option corolla"></div>
+          <div class="col-md-6 vehicle-option sienna"></div>
+          <div class="col-md-6 vehicle-option yaris"></div>
+        </div>
+
+        <!-- footer -->
+        <div class="col-md-4 navbar-fixed-bottom">
+          <h1>Cost:</h1>
+        </div>
+      </div>
+
+      <div class="col-md-8 demo-container">
+        <div class="col-md-12 vehicle-display camry-white"></div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
