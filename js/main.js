@@ -23,7 +23,7 @@ $('.reservations').on('submit', (function(e) {
   reservationData.name = $('.reservation-name').val();
 
   database.ref('reservations').push(reservationData);
-});
+}));
 
 // on initial load and addition of each reservation update the view
 database.ref('reservations').on('child_added', function(snapshot) {
