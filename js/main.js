@@ -25,6 +25,21 @@ $('.reservations').on('submit', (function(e) {
   database.ref('reservations').push(reservationData);
 });)
 
-
+// on initial load and addition of each reservation update the view
+database.ref('reservations').on('child_added', function(snapshot) {
+  // grab element to hook to
+  var reservationList = $('.reservation-list');
+  // get data from database
+  var reservations = snapshot.val();
+  // get your template from your script tag
+  var source   = $("#reservation-template").html();
+  // compile template
+  var template = Handlebars.compile(source);
+  // pass data to template to be evaluated within handlebars
+  // as the template is created
+  var reservationTemplate = template(reservations);
+  // append created templated
+  reservationList.append(reservationTemplate);
+});
 
 
