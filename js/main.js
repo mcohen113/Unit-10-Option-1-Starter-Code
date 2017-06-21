@@ -11,3 +11,20 @@ var config = {
 var database = firebase.database();
 
 var reservationData = {};
+
+$('.reservation-day li').click(function() {
+  reservationData.day = $(this).text();
+
+});
+
+$('.reservations').on('submit', (function(e) {
+  e.preventDefault();
+
+  reservationData.name = $('.reservation-name').val();
+
+  database.ref('reservations').push(reservationData);
+});)
+
+
+
+
