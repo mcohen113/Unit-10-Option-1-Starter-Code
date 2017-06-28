@@ -23,6 +23,14 @@ $('.reservations').on('submit', (function(e) {
   reservationData.name = $('.reservation-name').val();
 
   database.ref('reservations').push(reservationData);
+
+
+  if (reservationData.name === '') {
+    alert("enter your name");
+  }
+  else {
+    console.log("name entered")
+  };
 }));
 
 // on initial load and addition of each reservation update the view
