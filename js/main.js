@@ -26,8 +26,9 @@ $('.reservations').on('submit', (function(e) {
 
     $('input').css({
       border: '2px dashed red',
+      backgroundColor: '#a0041e'
     });
-    console.log("name not entered")
+    //console.log("name not entered")
   }
   else {
     //console.log("name entered")
