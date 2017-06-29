@@ -26,12 +26,11 @@ $('.reservations').on('submit', (function(e) {
 
     $('input').css({
       border: '2px dashed red',
-      //color: '#ff7287'
     });
     console.log("name not entered")
   }
   else {
-    console.log("name entered")
+    //console.log("name entered")
     database.ref('reservations').push(reservationData);
   };
 }));
@@ -69,8 +68,17 @@ function initMap() {
   });
 }
 
+
+
 // Add form validation to make sure the user has selected a date and entered their name before submitting.
 // Add error styles if the user is missing information in the form.
+// function validateForm() {
+//     var x = document.forms["myForm"]["fname"].value;
+//     if (x == "") {
+//         alert("Name must be filled out");
+//         return false;
+//     }
+// }
 
 // Add the ability to cancel a reservation.
 
