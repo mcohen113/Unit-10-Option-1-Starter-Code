@@ -22,14 +22,17 @@ $('.reservations').on('submit', (function(e) {
 
   reservationData.name = $('.reservation-name').val();
 
-  database.ref('reservations').push(reservationData);
-
-
   if (reservationData.name === '') {
-    alert("enter your name");
+
+    $('input').css({
+      border: '2px dashed red',
+      //color: '#ff7287'
+    });
+    console.log("name not entered")
   }
   else {
     console.log("name entered")
+    database.ref('reservations').push(reservationData);
   };
 }));
 
