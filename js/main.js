@@ -26,15 +26,25 @@ $('.reservations').on('submit', (function(e) {
 
     $('input').css({
       border: '2px dashed red',
-      backgroundColor: '#a0041e'
+      //backgroundColor: '#a0041e'
     });
     //console.log("name not entered")
   }
   else {
+
     //console.log("name entered")
-    database.ref('reservations').push(reservationData);
+    database.ref('reservations').push(reservationData)
+    $("form").trigger("reset");
   };
+
+
 }));
+
+
+
+
+
+
 
 // on initial load and addition of each reservation update the view
 database.ref('reservations').on('child_added', function(snapshot) {
