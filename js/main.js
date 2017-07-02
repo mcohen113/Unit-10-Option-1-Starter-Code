@@ -81,13 +81,7 @@ function initMap() {
 
 // Add form validation to make sure the user has selected a date and entered their name before submitting.
 // Add error styles if the user is missing information in the form.
-// function validateForm() {
-//     var x = document.forms["myForm"]["fname"].value;
-//     if (x == "") {
-//         alert("Name must be filled out");
-//         return false;
-//     }
-// }
+
 
 // Add the ability to cancel a reservation.
 
