@@ -31,13 +31,11 @@ $('.reservations').on('submit', (function(e) {
     //console.log("name not entered")
   }
   else {
-
     //console.log("name entered")
     database.ref('reservations').push(reservationData)
+    $('.reservation-list').append('<button type="submit" name="cancel" />');
     $("form").trigger("reset");
   };
-
-
 }));
 
 
