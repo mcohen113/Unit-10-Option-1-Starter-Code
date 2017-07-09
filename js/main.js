@@ -80,11 +80,12 @@ function initMap() {
 
 
 // Add form validation to make sure the user has selected a date and entered their name before submitting.
-// Add error styles if the user is missing information in the form.
 
 
 // Add the ability to cancel a reservation.
 
 // Add an “Hours” section to list the restaurant’s hours as well as tell the user whether or not it is opened or closed.
+// make a date object with hours and minutes -- set a variable for current time
+// use conditional --if (hours are between 7am and 11pm) {restaurant is open} else {restaurant is closed}
 
 //Consume a third-party social media API, and put relevant data into the view. These APIs can be, but are not limited to, Facebook, Instagram, or Twitter.
