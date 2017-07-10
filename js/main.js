@@ -14,7 +14,6 @@ var reservationData = {};
 
 $('.reservation-day li').click(function() {
   reservationData.day = $(this).text();
-
 });
 
 $('.reservations').on('submit', (function(e) {
@@ -29,6 +28,13 @@ $('.reservations').on('submit', (function(e) {
       //backgroundColor: '#a0041e'
     });
     //console.log("name not entered")
+  }
+
+  if (reservationData.day === undefined) {
+    $('button.dropdown-toggle').css({
+      border: '2px dashed red',
+      //backgroundColor: '#a0041e'
+    });
   }
   else {
     //console.log("name entered")
