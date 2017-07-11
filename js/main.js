@@ -39,19 +39,16 @@ $('.reservations').on('submit', (function(e) {
   else {
     //console.log("name entered")
     database.ref('reservations').push(reservationData)
-    $('.reservation-list').append('<button type="submit" name="cancel" />');
     $("form").trigger("reset");
   };
 }));
 
 
 
-
-
-
-
 // on initial load and addition of each reservation update the view
 database.ref('reservations').on('child_added', function(snapshot) {
+  var reservations = snapshot.val();
+  reservations.id = snapshot.key;
   // grab element to hook to
   var reservationList = $('.reservation-list');
   // get data from database
@@ -66,6 +63,15 @@ database.ref('reservations').on('child_added', function(snapshot) {
   // append created templated
   reservationList.append(reservationTemplate);
 });
+
+function cancelReservation() {
+  $('.cancel-button').on('click', function() {
+    database.ref('reservations').child(this.data('id')).remove();
+  })
+  $('tr').remove();
+}
+
+
 
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -84,8 +90,6 @@ function initMap() {
 }
 
 
-
-// Add form validation to make sure the user has selected a date and entered their name before submitting.
 
 
 // Add the ability to cancel a reservation.
