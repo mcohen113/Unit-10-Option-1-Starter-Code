@@ -45,16 +45,11 @@ $('.reservations').on('submit', (function(e) {
 
 
 
+
+
+
 // on initial load and addition of each reservation update the view
 database.ref('reservations').on('child_added', function(snapshot) {
-  var reservations = snapshot.val();
-  reservations.id = snapshot.key;
-  function cancelReservation() {
-    $('.cancel-button').on('click', function() {
-      database.ref('reservations').child(this.data('id')).remove();
-    })
-    $('tr').remove();
-  }
   // grab element to hook to
   var reservationList = $('.reservation-list');
   // get data from database
@@ -71,6 +66,18 @@ database.ref('reservations').on('child_added', function(snapshot) {
 });
 
 
+function cancelReservation() {
+  var reservations = snapshot.val();
+  reservations.id = snapshot.key;
+  database.ref('reservations').child(this.data('id')).remove();
+    ///console.log("removed from database");
+
+  $('.cancel-button').on('click', function() {
+  $('tr').remove();
+  });
+};
+
+cancelReservation();
 
 
 function initMap() {
