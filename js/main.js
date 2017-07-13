@@ -43,9 +43,8 @@ $('.reservations').on('submit', (function(e) {
   };
 }));
 
-
-
-
+var d = new Date();
+document.getElementById("time").innerHTML = d.toString();
 
 
 // on initial load and addition of each reservation update the view
@@ -92,10 +91,6 @@ function initMap() {
   });
 }
 
-
-
-
-// Add the ability to cancel a reservation.
 
 // Add an “Hours” section to list the restaurant’s hours as well as tell the user whether or not it is opened or closed.
 // make a date object with hours and minutes -- set a variable for current time
