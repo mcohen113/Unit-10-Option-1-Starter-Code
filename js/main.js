@@ -54,6 +54,7 @@ database.ref('reservations').on('child_added', function(snapshot) {
   var reservationList = $('.reservation-list');
   // get data from database
   var reservations = snapshot.val();
+  reservations.id = snapshot.key;
   // get your template from your script tag
   var source   = $("#reservation-template").html();
   // compile template
@@ -65,20 +66,15 @@ database.ref('reservations').on('child_added', function(snapshot) {
   reservationList.append(reservationTemplate);
 });
 
+function cancelReservation(id) {
+  database.ref('reservations').child(id).remove();
+}
 
-function cancelReservation() {
-  var reservations = snapshot.val();
-  reservations.id = snapshot.key;
-  database.ref('reservations').child(this.data('id')).remove();
-    ///console.log("removed from database");
-
-  $('.cancel-button').on('click', function() {
-  $('tr').remove();
-  });
-};
-
-cancelReservation();
-
+$('body').on('click','.cancel-button', function(e) {
+  e.preventDefault();
+  cancelReservation($(e.target).data('id'));
+  $(e.target).parent().parent().remove();
+});
 
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
