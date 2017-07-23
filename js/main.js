@@ -12,6 +12,7 @@ var database = firebase.database();
 
 var reservationData = {};
 
+
 $('.reservation-day li').click(function() {
   reservationData.day = $(this).text();
 });
