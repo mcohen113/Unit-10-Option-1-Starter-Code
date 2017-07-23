@@ -32,4 +32,8 @@
 	height: 50vh;
 }
 
+.cancel-button:hover {
+  opacity: .5;
+  background-color: #ff565c;
+}
 

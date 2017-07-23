@@ -10,13 +10,12 @@
 
 </head>
 <body data-spy="scroll" data-target=".navbar-inverse" data-offset="50">
-
 	<!-- template for reservation-list -->
 	<script id="reservation-template" type="text/x-handlebars-template">
 		<tr>
 			<td>{{name}}</td>
 			<td>{{day}}</td>
-      		<td><a class="cancel-button" data-id="{{id}}">Cancel Reservation</a></td>
+      		<td><button class="cancel-button" data-id="{{id}}">Cancel Reservation</button></td>
 		</tr>
 	</script>
 
@@ -65,7 +64,9 @@
 		<!-- reservations -->
 		<table class="table table-striped col-md-12 container-fluid">
 			<h4>Reservations</h4>
-          <p id="time"></p>
+        <p>HOURS: 7:00am-11:00pm</p><br>
+        <p id="time"></p>
+        <p id="open-close"></p>
 			<thead>
 				<th>Name</th>
 				<th>Day</th>
